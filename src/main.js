@@ -1,9 +1,15 @@
 let addNoteBtn = document.querySelector('#addNoteBtn');
-addNoteBtn.onclick = () => {
 
+addNoteBtn.onclick = () => {
     //input forms
     let newNoteInput = document.querySelector('#newNoteInput');
     let notes = document.querySelector('#app .notes');
+    if (newNoteInput.value == '') {
+
+        alert('Llenar campos');
+        return;
+    }
+
     //new elements
     let note = document.createElement('li');
     let checkbox = document.createElement('input');
@@ -25,3 +31,5 @@ addNoteBtn.onclick = () => {
     newNoteInput.value = '';
     notes.appendChild(note);
 }
+
+
